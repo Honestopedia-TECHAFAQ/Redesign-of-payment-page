@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Cloud - Payment Gateway</title>
+    <link rel="icon" type="image/png" href="https://businesscloud.gr/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Business Cloud">
+    <meta property="og:site_name" content="Business Cloud">
+    <meta property="og:url" content="https://billing.businesscloud.gr/q0e231JYFd">
+    <meta property="og:description" content="Business Cloud Payment Gateway">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://billing.businesscloud.gr/img/logos/myinvoice/og.jpg">
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="navbar fixed w-full bg-transparent p-4 z-10 transition-all">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="https://businesscloud.gr" target="_blank" class="flex items-center">
+                <img class="h-10 mr-4" src="https://billing.businesscloud.gr/img/logos/myinvoice/logo.png" alt="Business Cloud Logo">
+                <span class="text-xl font-semibold text-gray-700">Business Cloud</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="https://businesscloud.gr" target="_blank" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
+                <a href="#services" class="nav-link text-gray-600 hover:text-blue-600">Services</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600">About Us</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-full h-full bg-white shadow-lg transform translate-x-full transition-transform md:hidden z-20">
+        <div class="flex justify-between items-center p-4 border-b">
+            <a href="https://businesscloud.gr" target="_blank" class="flex items-center">
+                <img class="h-8 mr-2" src="https://billing.businesscloud.gr/img/logos/myinvoice/logo.png" alt="Business Cloud Logo">
+                <span class="text-lg font-semibold text-gray-700">Business Cloud</span>
+            </a>
+            <button id="close-mobile-menu" class="text-gray-600 focus:outline-none">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6 p-6 text-lg">
+            <a href="https://businesscloud.gr" target="_blank" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
+            <a href="#services" class="nav-link text-gray-600 hover:text-blue-600">Services</a>
+            <a href="#about" class="nav-link text-gray-600 hover:text-blue-600">About Us</a>
+            <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+        </nav>
+    </div>
+    <main class="flex-1 mx-auto max-w-3xl w-full px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold mb-2 text-center">Payment Details</h2>
+                <p class="text-center text-gray-500 text-lg">Total Value: <span class="text-blue-600 font-bold text-2xl">€100,00</span></p>
+            </div>
+            <div class="mb-6 text-center">
+                <p class="text-xl font-medium mb-4">Select Your Payment Method:</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-3">
+                <a id="dias" class="payment-method bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-between border border-gray-300 cursor-pointer">
+                    <img src="https://billing.businesscloud.gr/img/dias.png" alt="DIAS">
+                    <span class="mt-4 text-center text-lg font-semibold">Bank Deposit using DIAS</span>
+                </a>
+                <a id="viva" class="payment-method bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-between border border-gray-300 cursor-pointer">
+                    <img src="https://billing.businesscloud.gr/img/viva.png" alt="Viva Smart Checkout">
+                    <span class="mt-4 text-center text-lg font-semibold">Viva Smart Checkout</span>
+                </a>
+                <a id="lightning" class="payment-method bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-between border border-gray-300 cursor-pointer">
+                    <img src="https://billing.businesscloud.gr/img/lightning.png" alt="Lightning Network">
+                    <span class="mt-4 text-center text-lg font-semibold">Lightning Network Payment</span>
+                </a>
+            </div>
+            <div id="loader" class="hidden flex items-center justify-center mt-8">
+                <svg class="h-10 w-10 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+        </div>
+    </main>
+    <footer class="p-4 bg-white shadow-lg mt-8">
+        <div class="max-w-3xl flex justify-between items-center mx-auto">
+            <img class="h-6 mr-4" src="https://billing.businesscloud.gr/img/logos/myinvoice/logo.png" alt="My Invoice">
+            <span>&copy; 2024 - Business Cloud</span>
+        </div>
+    </footer>
+   <script src="script.js"></script>
+</body>
+</html>
